@@ -40,7 +40,7 @@ const CreateDriverForm = () => {
   };
 
   return (
-    <div className='p-6 bg-white shadow-md rounded'>
+    <div className='p-3 bg-white shadow-md rounded h-screen'>
       <h2 className='text-lg font-bold mb-4'>Create New Driver</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Name Field */}

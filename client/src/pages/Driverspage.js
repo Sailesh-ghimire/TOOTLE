@@ -15,9 +15,9 @@ const DriversPage = () => {
   }
 
   return (
-    <div className='p-6'>
-      <h2 className='text-2xl font-bold mb-4'>Drivers</h2>
-      <DriversTable data={data} />
+    <div className='p-6 bg-gray-100 min-h-screen'>
+      <h2 className='text-4xl font-bold text-gray-900 mb-6'>Drivers</h2>
+      <DriversTable />
     </div>
   );
 };

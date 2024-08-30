@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,37 +14,87 @@ import Dashboard from './pages/Dashboard';
 import DriversPage from './pages/Driverspage';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
-import CreateDriverForm from './components/createDriver';
 import CreateDriver from './components/createDriver';
 import ProtectedRoute from './PrivateRoute';
 import LoginPage from './pages/Login';
 import PublicRoute from './PublicRoute';
+import RegisterPage from './pages/RegisterPage';
 const queryClient = new QueryClient();
 
 function App() {
-  const token = localStorage.getItem('authToken');
+  // const [isAuth, setIsAuth] = useState(!!localStorage.getItem('authToken'));
+
+  // useEffect(() => {
+  //   const handleStorageChange = () => {
+  //     setIsAuth(!!localStorage.getItem('authToken'));
+  //   };
+
+  //   window.addEventListener('storage', handleStorageChange);
+
+  //   // Optional: Cleanup event listener on unmount
+  //   return () => {
+  //     window.removeEventListener('storage', handleStorageChange);
+  //   };
+  // }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
         <ToastContainer />
         <Routes>
-          <Route path='/' element={<ProtectedRoute element={<Layout />} />}>
-            <Route index element={<ProtectedRoute element={<HomePage />} />} />{' '}
+          <Route
+            path='/'
+            element={
+              // <ProtectedRoute>
+              <Layout />
+              // </ProtectedRoute>
+            }
+          >
+            <Route
+              index
+              element={
+                <ProtectedRoute>
+                  <HomePage />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path='drivers'
-              element={<ProtectedRoute element={<DriversPage />} />}
+              element={
+                <ProtectedRoute>
+                  <DriversPage />
+                </ProtectedRoute>
+              }
             />
             <Route
               path='create'
-              element={<ProtectedRoute element={<CreateDriver />} />}
+              element={
+                <ProtectedRoute>
+                  <CreateDriver />
+                </ProtectedRoute>
+              }
             />
           </Route>
-          <Route path='/login' element={<Login />} />
+
+          <Route
+            path='/login'
+            element={
+              <PublicRoute>
+                <Login />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path='/register'
+            element={
+              <PublicRoute>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
         </Routes>
       </Router>
     </QueryClientProvider>
   );
 }
-
 export default App;
