@@ -1,12 +1,10 @@
 const db = require('../config/db');
 
-// Get all drivers
 exports.getAllDrivers = async () => {
   const [drivers] = await db.query('SELECT * FROM drivers');
   return drivers;
 };
 
-// Create a new driver
 exports.createDriver = async driverData => {
   const {
     name,
@@ -32,21 +30,18 @@ exports.createDriver = async driverData => {
     );
   } catch (error) {
     if (error.code === 'ER_DUP_ENTRY') {
-      // Identify the duplicate entry from the error message
       const field = error.sqlMessage.includes('email')
         ? 'Email'
         : 'License Number';
       throw new Error(`${field} already exists`);
     }
-    throw error; // For other types of errors
+    throw error;
   }
 };
 
-// Update an existing driver
 exports.updateDriver = async (id, driverData) => {
   const { vehicle_number, vehicle_model } = driverData;
 
-  // Build the query dynamically based on which fields are provided
   let query = 'UPDATE drivers SET';
   const queryParams = [];
 
@@ -69,7 +64,6 @@ exports.updateDriver = async (id, driverData) => {
   await db.query(query, queryParams);
 };
 
-// Delete a driver
 exports.deleteDriver = async id => {
   await db.query('DELETE FROM drivers WHERE id = ?', [id]);
 };

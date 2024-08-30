@@ -1,4 +1,3 @@
-// CreateDriverForm.js
 import React, { useState } from 'react';
 import { useCreateDriver } from '../hooks/useDrivers';
 import { useForm } from 'react-hook-form';
@@ -15,7 +14,6 @@ const CreateDriverForm = () => {
     error,
   } = useCreateDriver();
 
-  // Initialize React Hook Form with Zod resolver
   const {
     register,
     handleSubmit,
@@ -28,7 +26,7 @@ const CreateDriverForm = () => {
   const onSubmit = data => {
     createDriver(data, {
       onSuccess: () => {
-        reset(); // Clear the form on success
+        reset();
         toast.success('Driver created successfully!');
       },
       onError: error => {
@@ -43,7 +41,6 @@ const CreateDriverForm = () => {
     <div className='p-3 bg-white shadow-md rounded h-screen'>
       <h2 className='text-lg font-bold mb-4'>Create New Driver</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {/* Name Field */}
         <div className='mb-4'>
           <label className='block text-gray-700'>Name</label>
           <input
@@ -54,7 +51,6 @@ const CreateDriverForm = () => {
           {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
         </div>
 
-        {/* Email Field */}
         <div className='mb-4'>
           <label className='block text-gray-700'>Email</label>
           <input
@@ -67,7 +63,6 @@ const CreateDriverForm = () => {
           )}
         </div>
 
-        {/* Phone Number Field */}
         <div className='mb-4'>
           <label className='block text-gray-700'>Phone Number</label>
           <input
@@ -80,7 +75,6 @@ const CreateDriverForm = () => {
           )}
         </div>
 
-        {/* Vehicle Number Field */}
         <div className='mb-4'>
           <label className='block text-gray-700'>Vehicle Number</label>
           <input
@@ -93,7 +87,6 @@ const CreateDriverForm = () => {
           )}
         </div>
 
-        {/* Vehicle Model Field */}
         <div className='mb-4'>
           <label className='block text-gray-700'>Vehicle Model</label>
           <input
@@ -106,7 +99,6 @@ const CreateDriverForm = () => {
           )}
         </div>
 
-        {/* License Number Field */}
         <div className='mb-4'>
           <label className='block text-gray-700'>License Number</label>
           <input
@@ -119,7 +111,6 @@ const CreateDriverForm = () => {
           )}
         </div>
 
-        {/* Submit Button */}
         <button
           type='submit'
           className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'

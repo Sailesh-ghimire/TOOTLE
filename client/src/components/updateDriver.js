@@ -22,7 +22,7 @@ const UpdateDriver = ({ driver, onClose }) => {
       {
         onSuccess: () => {
           console.log('Driver updated successfully');
-          onClose(); // Close the update form after success
+          onClose();
         },
         onError: error => {
           console.error('Error updating driver:', error.message);
@@ -32,7 +32,6 @@ const UpdateDriver = ({ driver, onClose }) => {
   };
 
   return (
-    // <div className='p-6 bg-white rounded-lg  w-full max-w-md'>
     <div>
       <div className='flex justify-between items-center mb-4 border-b border-gray-200 pb-4'>
         <h2 className='text-2xl font-semibold text-gray-900'>Update Driver</h2>

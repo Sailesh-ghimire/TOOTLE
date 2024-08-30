@@ -1,6 +1,5 @@
 import { z } from 'zod';
 
-// Define a Zod schema for the create driver form
 export const driverSchema = z.object({
   name: z.string().min(1, { message: 'Name is required' }),
   email: z.string().email({ message: 'Valid email is required' }),

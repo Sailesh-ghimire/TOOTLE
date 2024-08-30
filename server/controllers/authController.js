@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const userModel = require('../models/userModel');
 
-const JWT_SECRET = 'tootle'; // Use an environment variable in production
+const JWT_SECRET = 'tootle';
 
 exports.register = async (req, res) => {
   const { fullName, email, password } = req.body;
@@ -16,6 +16,7 @@ exports.register = async (req, res) => {
     await userModel.createUser(fullName, email, hashedPassword);
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: error.message });
   }
 };

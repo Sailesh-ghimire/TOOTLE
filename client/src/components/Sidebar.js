@@ -48,13 +48,6 @@ const Sidebar = () => {
 
       <div className='absolute bottom-0 w-full border-t border-gray-700'>
         <div className='bg-gray-900 text-white absolute bottom-0 w-full border-t border-gray-700'>
-          {/* <Link
-            to='/profile'
-            className='block p-4 hover:bg-gray-800 rounded-lg transition-colors duration-200'
-            onClick={() => setIsDrawerOpen(false)}
-          >
-            <AccountCircleIcon className='inline mr-2' /> Profile
-          </Link> */}
           <button
             onClick={handleLogout}
             className='block w-full p-4 text-left hover:bg-gray-800 rounded-lg transition-colors duration-200'

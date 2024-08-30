@@ -1,6 +1,5 @@
 const driverModel = require('../models/driverModel');
 
-// Get all drivers
 exports.getAllDrivers = async (req, res) => {
   try {
     const drivers = await driverModel.getAllDrivers();
@@ -10,7 +9,6 @@ exports.getAllDrivers = async (req, res) => {
   }
 };
 
-// Create a new driver
 exports.createDriver = async (req, res) => {
   const driverData = req.body;
   try {
@@ -21,7 +19,6 @@ exports.createDriver = async (req, res) => {
   }
 };
 
-// Update an existing driver
 exports.updateDriver = async (req, res) => {
   const { id } = req.params;
   const driverData = req.body;
@@ -34,7 +31,6 @@ exports.updateDriver = async (req, res) => {
   }
 };
 
-// Delete a driver
 exports.deleteDriver = async (req, res) => {
   const { id } = req.params;
   try {

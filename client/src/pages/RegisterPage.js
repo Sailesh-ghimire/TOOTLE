@@ -40,12 +40,12 @@ const RegisterPage = () => {
               className='block text-gray-300 text-sm font-medium mb-2'
               htmlFor='name'
             >
-              Name
+              Full Name
             </label>
             <input
               type='text'
-              id='name'
-              {...register('name')}
+              id='fullName'
+              {...register('fullName')}
               className={`border ${
                 errors.name ? 'border-red-600' : 'border-gray-600'
               } bg-gray-700 text-white p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500`}

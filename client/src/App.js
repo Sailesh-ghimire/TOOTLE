@@ -22,34 +22,12 @@ import RegisterPage from './pages/RegisterPage';
 const queryClient = new QueryClient();
 
 function App() {
-  // const [isAuth, setIsAuth] = useState(!!localStorage.getItem('authToken'));
-
-  // useEffect(() => {
-  //   const handleStorageChange = () => {
-  //     setIsAuth(!!localStorage.getItem('authToken'));
-  //   };
-
-  //   window.addEventListener('storage', handleStorageChange);
-
-  //   // Optional: Cleanup event listener on unmount
-  //   return () => {
-  //     window.removeEventListener('storage', handleStorageChange);
-  //   };
-  // }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
         <ToastContainer />
         <Routes>
-          <Route
-            path='/'
-            element={
-              // <ProtectedRoute>
-              <Layout />
-              // </ProtectedRoute>
-            }
-          >
+          <Route path='/' element={<Layout />}>
             <Route
               index
               element={

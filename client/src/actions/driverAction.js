@@ -24,7 +24,6 @@ export const createDriverAction = async driverData => {
   }
 };
 
-// Action to handle driver update
 export const updateDriverAction = async driverData => {
   try {
     const updatedDriver = await updateDriverService(driverData);
@@ -34,11 +33,10 @@ export const updateDriverAction = async driverData => {
   }
 };
 
-// Action to handle driver deletion
 export const deleteDriverAction = async driverId => {
   try {
     await deleteDriverService(driverId);
-    return driverId; // Returning the deleted driver ID for reference
+    return driverId;
   } catch (error) {
     throw new Error('Error deleting driver: ' + error.message);
   }

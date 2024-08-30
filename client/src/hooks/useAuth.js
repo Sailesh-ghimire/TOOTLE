@@ -3,7 +3,6 @@ import { loginAction } from '../actions/authActions';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-// Custom hook that manages login operation
 export const useLoginHook = () => {
   const navigate = useNavigate();
 
@@ -15,7 +14,7 @@ export const useLoginHook = () => {
 
         localStorage.setItem('authToken', data.token);
         toast.success('Login Successful!');
-        navigate('/'); // Store the token in localStorage
+        navigate('/');
       }
     },
     onError: error => {

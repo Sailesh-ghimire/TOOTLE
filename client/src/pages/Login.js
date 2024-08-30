@@ -14,10 +14,10 @@ const LoginPage = () => {
     resolver: zodResolver(loginSchema),
   });
   const { mutate: login, isLoading, isSuccess } = useLoginHook();
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   const onSubmit = async data => {
-    login(data); // Call the mutation
+    login(data);
   };
 
   return (

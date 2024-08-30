@@ -15,12 +15,7 @@ const Dashboard = () => {
             Logout
           </button>
         </header>
-        <main className='bg-white p-4 rounded shadow-md'>
-          {/* <Routes>
-            <Route path='/home' element={<HomePage />} />
-            <Route path='/drivers' element={<DriversPage />} />
-          </Routes> */}
-        </main>
+        <main className='bg-white p-4 rounded shadow-md'></main>
       </div>
     </div>
   );

@@ -18,7 +18,6 @@ export const useDrivers = () => {
   });
 };
 
-// Custom hook for creating a new driver
 export const useCreateDriver = () => {
   return useMutation({
     mutationFn: createDriverAction,
@@ -31,16 +30,13 @@ export const useCreateDriver = () => {
   });
 };
 
-// hooks.js
-
-// Hook to handle driver update
 export const useUpdateDriver = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
     mutationFn: updateDriverAction,
     onSuccess: () => {
-      queryClient.invalidateQueries(['drivers']); // Refresh driver data after update
+      queryClient.invalidateQueries(['drivers']);
       console.log('Driver updated successfully');
     },
     onError: error => {
@@ -49,14 +45,13 @@ export const useUpdateDriver = () => {
   });
 };
 
-// Hook to handle driver deletion
 export const useDeleteDriver = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
     mutationFn: deleteDriverAction,
     onSuccess: () => {
-      queryClient.invalidateQueries(['drivers']); // Refresh driver data after delete
+      queryClient.invalidateQueries(['drivers']);
       console.log('Driver deleted successfully');
     },
     onError: error => {
