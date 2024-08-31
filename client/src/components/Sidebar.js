@@ -1,12 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import MenuIcon from '@mui/icons-material/Menu';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 const Sidebar = () => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const drawerRef = useRef(null);
-
   const navigate = useNavigate();
 
   const handleLogout = () => {

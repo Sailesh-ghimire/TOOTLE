@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useLoginHook } from '../hooks/useAuth';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema } from '../validation/loginSchema';
-import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const {
@@ -13,8 +12,7 @@ const LoginPage = () => {
   } = useForm({
     resolver: zodResolver(loginSchema),
   });
-  const { mutate: login, isLoading, isSuccess } = useLoginHook();
-  const navigate = useNavigate();
+  const { mutate: login, isLoading } = useLoginHook();
 
   const onSubmit = async data => {
     login(data);

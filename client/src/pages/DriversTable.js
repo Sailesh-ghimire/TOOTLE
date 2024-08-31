@@ -11,7 +11,6 @@ const DriversTable = () => {
   const { data: drivers, isLoading, isError } = useDrivers();
   const { mutate: deleteDriver } = useDeleteDriver();
 
-  const [selectedDriver, setSelectedDriver] = useState(null);
   const [updatingDriver, setUpdatingDriver] = useState(null);
 
   const columns = [
@@ -75,15 +74,9 @@ const DriversTable = () => {
     },
   ];
 
-  const handleUpdate = driver => {
-    setUpdatingDriver(driver);
-  };
-
   const handleDelete = driverId => {
     deleteDriver(driverId, {
-      onSuccess: () => {
-        console.log('Driver deleted successfully');
-      },
+      onSuccess: () => {},
     });
   };
 

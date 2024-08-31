@@ -4,8 +4,6 @@ export const loginAction = async data => {
   try {
     const response = await loginService(data);
     if (response) {
-      console.log('action response:', response);
-
       return response;
     } else {
       throw new Error('Login failed: No token received');

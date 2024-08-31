@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useCreateDriver } from '../hooks/useDrivers';
 import { useForm } from 'react-hook-form';
 import { driverSchema } from '../validation/driverSchema';
@@ -6,13 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'react-toastify';
 
 const CreateDriverForm = () => {
-  const {
-    mutate: createDriver,
-    isLoading,
-    isError,
-    isSuccess,
-    error,
-  } = useCreateDriver();
+  const { mutate: createDriver, isLoading } = useCreateDriver();
 
   const {
     register,

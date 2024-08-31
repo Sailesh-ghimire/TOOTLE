@@ -1,8 +1,5 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
-import { Routes, Route, Outlet } from 'react-router-dom';
-import DriversPage from './Driverspage';
-import HomePage from './HomePage';
 
 const Dashboard = () => {
   return (

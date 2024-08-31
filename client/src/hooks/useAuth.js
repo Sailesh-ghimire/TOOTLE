@@ -10,8 +10,6 @@ export const useLoginHook = () => {
     mutationFn: loginAction,
     onSuccess: data => {
       if (data.token) {
-        console.log('hook response:', data);
-
         localStorage.setItem('authToken', data.token);
         toast.success('Login Successful!');
         navigate('/');

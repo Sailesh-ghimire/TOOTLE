@@ -1,22 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
 import DriversPage from './pages/Driverspage';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import CreateDriver from './components/createDriver';
 import ProtectedRoute from './PrivateRoute';
-import LoginPage from './pages/Login';
 import PublicRoute from './PublicRoute';
 import RegisterPage from './pages/RegisterPage';
 const queryClient = new QueryClient();

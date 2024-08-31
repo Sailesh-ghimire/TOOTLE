@@ -21,7 +21,6 @@ const UpdateDriver = ({ driver, onClose }) => {
       { id: driver.id, ...updatedData },
       {
         onSuccess: () => {
-          console.log('Driver updated successfully');
           onClose();
         },
         onError: error => {

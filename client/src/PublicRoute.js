@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const PublicRoute = ({ children }) => {
   const token = localStorage.getItem('authToken');

@@ -21,9 +21,7 @@ export const useDrivers = () => {
 export const useCreateDriver = () => {
   return useMutation({
     mutationFn: createDriverAction,
-    onSuccess: data => {
-      console.log('Driver created successfully:', data);
-    },
+    onSuccess: data => {},
     onError: error => {
       console.error(error.message);
     },
@@ -37,7 +35,6 @@ export const useUpdateDriver = () => {
     mutationFn: updateDriverAction,
     onSuccess: () => {
       queryClient.invalidateQueries(['drivers']);
-      console.log('Driver updated successfully');
     },
     onError: error => {
       console.error('Error updating driver:', error.message);
@@ -52,7 +49,6 @@ export const useDeleteDriver = () => {
     mutationFn: deleteDriverAction,
     onSuccess: () => {
       queryClient.invalidateQueries(['drivers']);
-      console.log('Driver deleted successfully');
     },
     onError: error => {
       console.error('Error deleting driver:', error.message);

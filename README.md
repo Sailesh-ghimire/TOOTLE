@@ -28,7 +28,7 @@ Tootle is a ride-sharing application designed for managing drivers, including CR
 
 ### Clone the Repository
 
-```bash
+```sh
 git clone https://github.com/Sailesh-ghimire/Tootle.git
 cd Tootle
 ```
@@ -45,16 +45,13 @@ npm install
 ```
 
 2. **Create a .env File**:
-
-Create a .env file in the server directory with the following content:
-
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=password
-DB_NAME=TOOTLE
-
-JWT_SECRET=tootle
-PORT=5000
+   Create a .env file in the server directory with the following content:
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=password
+   DB_NAME=TOOTLE
+   JWT_SECRET=tootle
+   PORT=5000
 
 3. **Run the server**:
 
@@ -73,8 +70,7 @@ npm install
 
 2. **Create a .env File**:
    Create a .env file in the client directory with the following content:
-
-REACT_APP_BASE_URL=http://localhost:5000
+   REACT_APP_BASE_URL=http://localhost:5000
 
 3. **Run the client**:
 
@@ -90,10 +86,8 @@ npm start
 
 ## API Endpoints
 
-POST /auth/login: Authenticate users.
-GET /drivers: List all drivers.
-POST /drivers: Create a new driver.
-PUT /drivers/:id
-: Update an existing driver.
-DELETE /drivers/:id
-: Delete a driver.
+1. POST /auth/login :Authenticate users.
+2. GET /drivers :List all drivers.
+3. POST /drivers :Create a new driver.
+4. PUT /drivers/:id :Update an existing driver.
+5. DELETE /drivers/:id :Delete a driver.

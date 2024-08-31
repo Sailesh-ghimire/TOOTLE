@@ -3,7 +3,7 @@ import DriversTable from './DriversTable';
 import { useDrivers } from '../hooks/useDrivers';
 
 const DriversPage = () => {
-  const { data, isLoading, isError } = useDrivers();
+  const { isLoading, isError } = useDrivers();
 
   if (isLoading) {
     return <div>Loading...</div>;

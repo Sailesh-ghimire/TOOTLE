@@ -18,7 +18,6 @@ exports.register = async (req, res) => {
     await userModel.createUser(fullName, email, hashedPassword);
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: error.message });
   }
 };
